@@ -20,9 +20,9 @@ module.exports = ((config) => {
         DAYS_IN_CALENDAR_SELECTED_CLASS_TRACE
     });
     
-    return getToFirstSearchResultsPage
+    return goToFirstSearchResultsPage
     
-    async function getToFirstSearchResultsPage(page) {
+    async function goToFirstSearchResultsPage(page) {
         // Go to search form
         await page.goto(URL_TO_SEARCH_FROM, {waitUntil : "domcontentloaded"});
         

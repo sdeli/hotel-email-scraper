@@ -9,7 +9,7 @@ module.exports = ((config) => {
     return filterSearchResult
     
     async function filterSearchResult(page) {
-        // await clickFiltersCheckBox(page, HOTEL__TERM);
+        await clickFiltersCheckBox(page, HOTEL__TERM);
         await clickFiltersCheckBox(page, CHALET__TERM);
         await clickFiltersCheckBox(page, GUEST_HOUSE__TERM);
     
@@ -36,7 +36,7 @@ module.exports = ((config) => {
                     return i;
                 }
             }
-        }, HOTEL__TERM);
+        }, textInCheckbox);
         
         let checkbox = allSearchFilterCheckboxesOnPage[checkBoxesIndex];
         await checkbox.click(checkbox);
