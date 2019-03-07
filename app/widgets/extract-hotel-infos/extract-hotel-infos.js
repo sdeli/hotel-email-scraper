@@ -1,3 +1,19 @@
+/* DESCRIPTION:
+    * The description of the module assumes that you have read the readme.txt file and the description of the app/controllers/hotel-scraper.js files description
+
+    * The main purpose of the widget is to extract form all the booking.com sub pages of each hotel, the names and adresses of the hotels and save them into the mysql database
+    * Main entry point is when the extractHotelInfos(batchId) function is called a/the contoller
+    * the application expets the batchId to be passed in as parameter
+    
+    * The extraction works on the following way:
+        * In the extractHotelInfos function the getHotelPageLinks(batchId); function provides all the sub pages of all hotels (in the current run of the application) from a csv file. The csv file which provides just those page links which are found of the current run of the application, is identified by the batchId
+        * Then all the booking.com sub page of the hotels will be extracted, 10 at once, sequentiallly
+        * It happens by the extract10HotelPagesForInfos(hotelPageLinksArr, i, batchId) function, which makes a request to each of the links of the hotelPageLinksArr
+        * Then all the htmls will be extracted in separate processes which is procedure is managed by the TaskQueue object
+        * the process where the extraction happens can be found in the constant: EXTRACT_HOTEL_INFOS_PROCESS__PATH
+        After the current batch of 10 booking.com hotel subpages are extracted the hotel names and adresses are saved into the database at return hotelsModel.hotelInfosFromBookingIntoDb(hotelInfosArr);
+*/
+
 const config = require('config');
 const TaskQueue = require('widgets/task-queue');
 const hotelsModel = require('models/hotels-model');

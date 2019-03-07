@@ -1,3 +1,16 @@
+/* DESCRIPTION:
+    * The description of the module assumes that you have read the readme.txt file and the description of   the app/controllers/hotel-scraper.js files description
+
+    * This widget extract from each booking.com search result page the sup pages of each hotel
+    
+    How The extraction works:
+        * Main entry point is the extractHotelPagelinks function is called in the controller wich expects the batchId to be passed in.
+        * In that function the getHotelSearchResPgLinksArr(batchId) provides all search result page links froms a csv file, which were extracted in the current run of the application.
+        * Then by the runExtractionParallel(subProcessPath, taskQueuCb, hotelLinkExtractionParams, i) function will the extractions are addded to the taskQueue manages that how many extractions can run concurrently. It defaults to the cpu core count of the current processor.
+        * The actual extraction is carried out by the extractCurrHotelPageLinksIntoCsvFilePath process which is executed by the taskQueue on the current search page link.
+        * When all of the search result page links are extracted the control gets back to the controller
+*/
+
 const config = require('config');
 const fs = require('fs')
 

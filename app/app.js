@@ -21,6 +21,5 @@ const dotenv = require('dotenv');
 let err = dotenv.config({ path: './.env.default' });
 let env = process.env;
 
-const hotelScraper = require('./services/hotel-scraper/hotel-scraper.js');
-// const ipAndPortFeeder = require('./services/ip-and-port-feeder/server.js'); 
+const hotelScraper = require('./controllers/hotel-scraper/hotel-scraper.js');
 hotelScraper();

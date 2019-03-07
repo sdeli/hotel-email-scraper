@@ -1,3 +1,12 @@
+/* DESCRIPTION:
+    * This widget is responsible for database access by the 'mysql' npm package
+    * for proper functioning what it needs can be found in the getDbConnPool function
+    * By the revealing modular pattern it exposes 3 methods for use:
+        * escape() => escapes variables, that they can be interpolled into the queries avoiding the danger of sql injection attacks
+        * queryCb => does a query against the databse
+        * queryProm() => promisifed queryCb which reolves just the results from the database and rejects on error
+*/
+
 const mysql = require('mysql');
 
 const db = (function(){
