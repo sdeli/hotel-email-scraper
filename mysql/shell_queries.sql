@@ -1,0 +1,2 @@
+#get count of websites, where emails have found
+select count(distinct emails_of_websites.website_id) from emails_of_websites inner join hotel_webistes on  hotel_webistes.batch_id = "2019-02-07_12-07-02" and hotel_webistes.website_id = emails_of_websites.website_id;

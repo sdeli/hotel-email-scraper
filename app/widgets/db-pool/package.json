@@ -1,0 +1,11 @@
+{
+  "name": "db-pool",
+  "version": "1.0.0",
+  "description": "this packages set up the db connection, via initializing a connection pool",
+  "main": "db-pool.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

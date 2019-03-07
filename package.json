@@ -1,0 +1,38 @@
+{
+  "name": "hotel-crawler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "dotenv": "^6.2.0",
+    "free-memory": "^1.0.0",
+    "is-gzip": "^2.0.0",
+    "is-html": "^1.1.0",
+    "json2csv": "^4.3.3",
+    "mysql": "^2.16.0",
+    "node-gzip": "^1.1.2",
+    "node-url-shortener": "^1.0.1",
+    "nodemailer": "^5.1.1",
+    "puppeteer": "^1.11.0",
+    "request-promise": "^4.2.2",
+    "shorturl": "0.0.3",
+    "uniqid": "^5.0.3"
+  },
+  "devDependencies": {
+    "request": "^2.88.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdeli/hotel-scraper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sdeli/hotel-scraper/issues"
+  },
+  "homepage": "https://github.com/sdeli/hotel-scraper#readme",
+  "description": ""
+}

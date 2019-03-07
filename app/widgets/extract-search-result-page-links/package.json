@@ -1,0 +1,11 @@
+{
+  "name": "extract-search-result-page-links",
+  "version": "1.0.0",
+  "description": "",
+  "main": "extract-search-result-page-links.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

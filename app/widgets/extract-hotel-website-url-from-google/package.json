@@ -1,0 +1,11 @@
+{
+  "name": "extract-hotel-website-url-from-google",
+  "version": "1.0.0",
+  "description": "",
+  "main": "extract-hotel-website-url-from-google.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
