@@ -1,7 +1,6 @@
 /* DESCRIPTION:
-    The purpose of this module is to do a random hotel search on bookin.com on it main search page: https://www.booking.com/ , and then do a filter on the first search result page to filter out from the search all the results which are not hotels or guesthosues or chalets and pass the first search result pages link to the controller.
+    The purpose of this module is to do a random hotel search on booking.com on its main search page: https://www.booking.com/ , and then do a filter on the first search result page to filter out from the search all the results which are not hotels or guesthosues or chalets and pass the first search result pages link to the controller.
 
-    At: module.exports = ((config) => { ... it creates a closure
 */
 const config = require('config');
 const puppeteer = require('puppeteer');

@@ -96,6 +96,34 @@ function createFolder(dirPath) {
     });
 }
 
+function moduleLinker(modulesPath, nodeModulesPath) {
+    modulesFoldersName = modulesPath.match(/[^/]*$/)[0];
+    var modulesSymlinkPath = `${nodeModulesPath}/${modulesFoldersName}`;
+    
+    try {
+        fs.mkdirSync(nodeModulesPath)
+    } catch (err) {
+        if (err.code === "EEXIST") {
+            console.log(`${nodeModulesPath} already exists no need to create it.`);
+            return true;
+        } else {
+            console.log(err);
+            return false
+        }
+    }
+    
+    try {
+        fs.symlinkSync(modulesPath, modulesSymlinkPath);
+    } catch (err) {
+        if (err.code === "EEXIST") {
+            console.log(`${modulesPath} already exists in ${modulesSymlinkPath}`);
+            return true
+        } else {
+            console.log(err);
+            return false
+        }
+    }
+}
 
 module.exports = {
     getRandomNumber,
@@ -106,5 +134,6 @@ module.exports = {
     readCsvIntoArr,
     makeRequest,
     logger,
-    createFolder
+    createFolder,
+    moduleLinker
 }
