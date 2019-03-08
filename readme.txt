@@ -1,8 +1,22 @@
 APP NAME: HOTEL EMAIL SCRAPER
 
-* The hotel emain scraper is a webscraper/search-engine which finds the names, websites, adresses and most importantly emails of hotels
-* The emails are utilized then in an other business.
-* For the proper functioning it needs its configuration file which is not uploaded to github because the customer who ordered it doesnt want, that others gets use of it, but he agreed that the producer uses it as a reference for further clients and employers
+Creator: Sandor Deli
+Location: Ireland, Galway
+Tel: 0838335144
+email: bgfkszmsdeli@gmail.com
+git: https://github.com/sdeli
+linkedIn: https://www.linkedin.com/in/sandor-deli-11b798101/
+
+Technoliges used in the projekt:
+backend: node.js
+database: mysql
+headless browser: puppeteer
+mentionable npm libraries: request-promise, free-memory, cheerio, json2csv, nodemailer
+
+PURPOSE OF THE PROJEKT
+    * The hotel emain scraper is a webscraper/search-engine which finds the names, websites, adresses and most importantly emails of hotels
+    * The emails are utilized then in an other business.
+    * For the proper functioning it needs its configuration file which is not uploaded to github because the customer who ordered it doesnt want, that others gets use of it, but he agreed that the producer uses it as a reference for further clients and employers
 
 BRIEF SUMMARY OF THE ARCHITECTURE
     The architecture of the software is heavily based on some design patterns, design methods and programming techiques:
@@ -51,7 +65,7 @@ BRIEF SUMMARY OF THE ARCHITECTURE
             - All widgets are getting all the configuration what they need in the top of there main file (which is referenced in there package.json). These configuration constants are getting hoisted when the application runs up, before the widget could be called by any of the controllers. Then they pass the needed configuration down to there submodules on demand. I made this principle to achive encapsulation and clean interface. Furthermore if all the configuration is passed into module at one place, then it easier to determine what configuration that widget needs to function properly and you dont miss out something.
     
     * Path Managment
-        * I created a widget called /app/widgets/modules-linker
+        * I created a function called modules-linker (in app/widgets/scraper-utils)
         * It links a target-folder into the node_modules folder
         * as a result (if there is a package.json file in the target-folder, which package.json in the main filed references a file in the target folder) then the target-folders excutable can be called all over the application (no matter how deep you are in the folder tree) as require('target-folders-name');
         * This happens to all entities of the application which are often referenced by other parts widgets or controllers.
